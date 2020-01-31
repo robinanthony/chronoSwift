@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,71 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="chrono" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="myTime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeF-2F-iHl">
+                                <rect key="frame" x="9" y="145" width="357" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="ADg-XI-MsD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cX-sa-itb">
+                                <rect key="frame" x="48" y="279" width="35" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="vku-JL-qBO"/>
+                                </constraints>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchDown" id="F3c-zp-8ub"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89l-lt-Lri">
+                                <rect key="frame" x="166" y="279" width="42" height="30"/>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="pause:" destination="BYZ-38-t0r" eventType="touchDown" id="ikX-2u-U3w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdx-xV-WGg">
+                                <rect key="frame" x="292" y="279" width="32" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="r2S-5U-sN6"/>
+                                </constraints>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchDown" id="et6-dE-Zp1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9cX-sa-itb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="1AZ-L5-6n2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vdx-xV-WGg" secondAttribute="trailing" constant="51" id="38v-vu-Yyh"/>
+                            <constraint firstItem="vdx-xV-WGg" firstAttribute="baseline" secondItem="89l-lt-Lri" secondAttribute="baseline" id="3gd-ra-bSz"/>
+                            <constraint firstItem="89l-lt-Lri" firstAttribute="centerX" secondItem="PeF-2F-iHl" secondAttribute="centerX" id="CpR-xF-e5a"/>
+                            <constraint firstItem="PeF-2F-iHl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="9" id="JzT-S1-6Xe"/>
+                            <constraint firstItem="PeF-2F-iHl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PWz-U0-8Wm"/>
+                            <constraint firstItem="vdx-xV-WGg" firstAttribute="leading" secondItem="89l-lt-Lri" secondAttribute="trailing" constant="84" id="Tgr-A6-suX"/>
+                            <constraint firstItem="89l-lt-Lri" firstAttribute="leading" secondItem="9cX-sa-itb" secondAttribute="trailing" constant="84" id="fO4-jP-Gvc"/>
+                            <constraint firstItem="PeF-2F-iHl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="125" id="fSl-e9-RKj"/>
+                            <constraint firstItem="vdx-xV-WGg" firstAttribute="baseline" secondItem="9cX-sa-itb" secondAttribute="baseline" id="h0s-YI-H8h"/>
+                            <constraint firstItem="9cX-sa-itb" firstAttribute="top" secondItem="PeF-2F-iHl" secondAttribute="bottom" constant="41" id="huU-2D-fIJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="myTime" destination="PeF-2F-iHl" id="cB5-K3-HBP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
